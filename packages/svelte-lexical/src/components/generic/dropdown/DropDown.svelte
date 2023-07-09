@@ -21,7 +21,10 @@
   }
 
   $: if (showDropDown && buttonRef && dropDownRef) {
+    const pos = buttonRef.getBoundingClientRect();
+    console.log('pos', pos);
     const {top, left} = buttonRef.getBoundingClientRect();
+
     dropDownRef.style.top = `${top + 42}px`;
     dropDownRef.style.left = `${Math.min(
       left,
